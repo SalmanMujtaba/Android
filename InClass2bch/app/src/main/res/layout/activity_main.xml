@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.salman.inclass2bch.MainActivity">
+
+    <TextView
+        android:id="@+id/targetWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:height="30dp"
+        android:text="Target Weight"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold" />
+    <View style="@style/Divider"
+        android:layout_below="@id/targetWeight"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/targetWeight"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioGroupBMI">
+
+        <RadioButton
+            android:id="@+id/radioButton18.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lessThan18.5"
+            android:layout_marginLeft="20dp"
+            android:onClick="onRadioButtonClicked"/>
+            />
+
+        <RadioButton
+            android:id="@+id/radioButton24.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="@string/between18.5and24.9"
+            android:onClick="onRadioButtonClicked"/>
+        />
+
+        <RadioButton
+            android:id="@+id/radioButton29.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:text="@string/between25and29.9"
+            android:onClick="onRadioButtonClicked"/>
+        />
+
+        <RadioButton
+            android:id="@+id/radioButtonGreatest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/greaterThan29"
+            android:layout_marginLeft="20dp"
+            android:onClick="onRadioButtonClicked"/>
+        />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editTextFeet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioGroupBMI"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="62dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextFeet"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <Button
+        android:id="@+id/btnWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/cw"
+        android:onClick="calculateWeight"
+        />
+
+    <TextView
+        android:id="@+id/textViewWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editTextIn"
+        android:layout_alignRight="@+id/editTextIn"
+        android:layout_below="@+id/btnWeight"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/Height"
+        android:text="@string/txtWeight"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/Height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewFeet"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="31dp"
+        android:layout_marginLeft="20dp"
+        android:text="Height"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewFeet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextIn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="feet"
+        android:layout_alignLeft="@+id/textViewIn"
+        android:layout_alignStart="@+id/textViewIn" />
+
+    <TextView
+        android:id="@+id/textViewIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnWeight"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="inches" />
+
+    <TextView
+        android:id="@+id/textViewBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/targetWeight"
+        android:layout_marginTop="22dp"
+        android:text="BMI ranges"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp" />
+
+</RelativeLayout>

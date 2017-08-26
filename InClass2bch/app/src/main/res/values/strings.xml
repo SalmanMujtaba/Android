@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InClass2bCh</string>
+    <string name="cw">Calculate Weight</string>
+    <string name="lessThan18.5"><![CDATA[< 18.5]]></string>
+    <string name="between18.5and24.9">18.5 to 24.9</string>
+    <string name="between25and29.9">25 to 29.9</string>
+    <string name="greaterThan29"><![CDATA[> 29.9]]></string>
+    <string name="txtWeight"></string>
+
+</resources>
