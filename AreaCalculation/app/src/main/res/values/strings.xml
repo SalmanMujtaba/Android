@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AreaCalculation</string>
+    <string name="result" />
+    <string name="areaTriangle">Area of Triangle</string>
+    <string name="areaSquare">Area of Square</string>
+    <string name="areaCircle">Area of Circle</string>
+    <string name="areaRectangle">Area of Rectangle</string>
+    <string name="clear">Clear All</string>
+</resources>
