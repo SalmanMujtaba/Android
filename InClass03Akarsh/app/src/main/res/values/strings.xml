@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">InClass03Akarsh</string>
+    <string name="name"></string>
+    <string name="email"></string>
+    <string name="mood"></string>
+    <string name="department"></string>
+    <string name="submit">Submit</string>
+    <string name="sis">SIS</string>
+    <string name="cs">CS</string>
+    <string name="bio">BIO</string>
+    <string name="others">Others</string>
+</resources>
