@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InClass04</string>
+    <string name="count" />
+    <string name="countAsync" />
+    <string name="password" />
+    <string name="length" />
+    <string name="lengthAsync" />
+    <string name="label_passwords_by_Threads">Passwords Generated Using Threads</string>
+    <string name="scroll_password_using_async">Passwords Generated Using Async Task</string>
+    <string name="label_text_passwords_asyncTask">Passwords Generated Using Async Task</string>
+    <string name="button_label_finish">Finish</string>
+
+    <string name="thread">Generate Password (Thread)</string>
+    <string name="async">Generate Passwords (Async Task)</string>
+    <string name="title_activity_generated_password">GeneratedPassword</string>
+    <string name="title_activity_generated_passwords">GeneratedPasswords</string>
+</resources>

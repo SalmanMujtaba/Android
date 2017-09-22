@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.salman.inclass04.MainActivity">
+
+        <SeekBar
+            android:id="@+id/seekBarCount"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="78dp"
+            android:max="10" />
+
+        <SeekBar
+            android:id="@+id/seekBarLen"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:max="23"
+            android:layout_below="@+id/textView4"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textViewCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/seekBarCount"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/seekBarCount"
+            android:layout_toRightOf="@+id/seekBarCount"
+            android:text="@string/password" />
+
+        <TextView
+            android:id="@+id/textViewLen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewCount"
+            android:layout_alignStart="@+id/textViewCount"
+            android:layout_alignTop="@+id/seekBarLen"
+            android:text="@string/length" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Password Count"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_above="@+id/textViewCount"
+            android:layout_alignLeft="@+id/seekBarCount"
+            android:layout_alignStart="@+id/seekBarCount"
+            android:layout_alignRight="@+id/textView4"
+            android:layout_alignEnd="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Password Length"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_below="@+id/seekBarCount"
+            android:layout_alignLeft="@+id/seekBarCount"
+            android:layout_alignStart="@+id/seekBarCount"
+            android:layout_marginTop="19dp"
+            android:layout_toLeftOf="@+id/textViewLen"
+            android:layout_toStartOf="@+id/textViewLen" />
+
+        <Button
+            android:id="@+id/buttonThread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/seekBarLen"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/seekBarLen"
+            android:layout_marginBottom="97dp"
+            android:layout_marginRight="35dp"
+            android:text="@string/thread"
+            tools:text="@string/thread" />
+
+        <Button
+            android:id="@+id/buttonAsync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonThread"
+            android:layout_alignLeft="@+id/buttonThread"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/buttonThread"
+            android:layout_alignStart="@+id/buttonThread"
+            android:layout_marginBottom="25dp"
+            android:text="@string/async"
+            tools:text="@string/async" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonThread"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="31dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_marginTop="21dp" />
+
+        <SeekBar
+            android:id="@+id/seekBarLenAsync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewPassword"
+            android:layout_alignLeft="@+id/buttonThread"
+            android:layout_alignStart="@+id/buttonThread"
+            android:layout_alignRight="@+id/seekBarLen"
+            android:layout_alignEnd="@+id/seekBarLen" />
+
+        <SeekBar
+            android:id="@+id/seekBarCountAsync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/seekBarLenAsync"
+            android:layout_alignStart="@+id/seekBarLenAsync"
+            android:layout_alignRight="@+id/seekBarLenAsync"
+            android:layout_alignEnd="@+id/seekBarLenAsync" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBarCountAsync"
+            android:layout_alignEnd="@+id/seekBarCountAsync"
+            android:layout_alignLeft="@+id/seekBarCountAsync"
+            android:layout_alignRight="@+id/seekBarCountAsync"
+            android:layout_alignStart="@+id/seekBarCountAsync"
+            android:text="Set Password Count"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBarLenAsync"
+            android:layout_alignEnd="@+id/seekBarLenAsync"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignRight="@+id/seekBarLenAsync"
+            android:layout_alignStart="@+id/textView2"
+            android:text="Select Password Length"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBarCountAsync"
+            android:layout_toEndOf="@+id/seekBarCountAsync"
+            android:layout_toRightOf="@+id/seekBarCountAsync"
+            android:text="@string/countAsync" />
+
+        <TextView
+            android:id="@+id/textViewAsyncCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salman"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_toRightOf="@+id/textView6"
+            android:layout_toEndOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textViewLengthAsync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_toEndOf="@+id/seekBarLenAsync"
+            android:layout_toRightOf="@+id/seekBarLenAsync"
+            android:text="@string/lengthAsync" />
+
+    </RelativeLayout>
+</layout>
