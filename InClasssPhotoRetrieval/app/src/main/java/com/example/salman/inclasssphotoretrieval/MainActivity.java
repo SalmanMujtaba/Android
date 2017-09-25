@@ -31,7 +31,10 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
     String[] links;
     ArrayList<String> arrayLinks;
     int length;
+    int arrayListLength;
+    int index;
     ListIterator<String> lst;
+
 
     android.support.v7.app.AlertDialog.Builder alert;
     private ActivityMainBinding binding;
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
         links = null;
         length = 1;
         arrayLinks=null;
+        arrayListLength = 0;
+        index = 0;
         binding.imageButtonN.setEnabled(false);
         binding.imageButtonP.setEnabled(false);
     }
@@ -97,34 +102,35 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
 
     }
     public void nextImage(View view) {
-        String nextLink;
+        try {
+            if (index >= 0 && index < arrayListLength) {
+                index++;
+                Toast.makeText(MainActivity.this, arrayLinks.get(index), Toast.LENGTH_LONG).show();
+                callGetImageAsyncTask(arrayLinks.get(index));
+            }
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            index=0;
+            Toast.makeText(MainActivity.this, arrayLinks.get(0),Toast.LENGTH_LONG).show();
+            callGetImageAsyncTask(arrayLinks.get(0));
 
-        if(lst.hasNext()){
-            nextLink = lst.next();
-            Toast.makeText(MainActivity.this, nextLink,Toast.LENGTH_LONG).show();
-            callGetImageAsyncTask(nextLink);
-     }
-        else{
-            lst = arrayLinks.listIterator();
-            nextLink = lst.next();
-            Toast.makeText(MainActivity.this, nextLink,Toast.LENGTH_LONG).show();
-
-            callGetImageAsyncTask(nextLink);
         }
     }
 
     public void prevImage(View view) {
-        String previouLink;
-        if(lst.hasPrevious()){
-            previouLink = lst.previous();
-            Toast.makeText(MainActivity.this, previouLink,Toast.LENGTH_LONG).show();
-            callGetImageAsyncTask(previouLink);
+        try {
+            if (index >= 0 && (index < arrayListLength)) {
+                index--;
+                Toast.makeText(MainActivity.this, arrayLinks.get(index), Toast.LENGTH_LONG).show();
+                callGetImageAsyncTask(arrayLinks.get(index));
+            }
         }
-        else{
-            lst = arrayLinks.listIterator(arrayLinks.size());
-            previouLink = lst.previous();
-            Toast.makeText(MainActivity.this, previouLink,Toast.LENGTH_LONG).show();
-            callGetImageAsyncTask(previouLink);
+        catch(IndexOutOfBoundsException e)
+        {
+            index= arrayListLength-1;
+            Toast.makeText(MainActivity.this, arrayLinks.get(arrayListLength-1),Toast.LENGTH_LONG).show();
+            callGetImageAsyncTask(arrayLinks.get(arrayListLength-1));
         }
     }
 
@@ -173,10 +179,13 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
             }
             else
             {
+                index = 0;
                 for(String link:links){
                     arrayLinks.add(link);
                 }
                 arrayLinks.remove(0);
+                arrayListLength = arrayLinks.size();
+                Log.d("demo", arrayListLength+" lenngth");
                 lst = arrayLinks.listIterator();
                 callGetImageAsyncTask(arrayLinks.get(0));
                 binding.imageButtonN.setEnabled(true);
