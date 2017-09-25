@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.salman.inclasssphotoretrieval.MainActivity.MainActivity">
+
+        <TextView
+            android:id="@+id/textViewKeyword"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="Select Keyword"
+            android:paddingTop="20dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="15dp"
+            android:text="GO"
+            android:onClick="chooseKeyword"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/textViewKeyword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:scaleType="fitXY"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonN"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="17dp"
+            android:background="@null"
+            android:onClick="nextImage"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/next" />
+
+        <ImageButton
+            android:id="@+id/imageButtonP"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_alignTop="@+id/imageButtonN"
+            android:background="@null"
+            android:onClick="prevImage"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/prev" />
+
+    </RelativeLayout>
+</layout>

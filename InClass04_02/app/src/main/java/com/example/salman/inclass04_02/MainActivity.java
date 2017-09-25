@@ -249,6 +249,4 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             psw[i] = passwordsThread[i];
         }
     }
-
-
 }
