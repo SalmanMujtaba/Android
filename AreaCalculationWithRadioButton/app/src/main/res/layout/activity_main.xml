@@ -34,24 +34,26 @@
         android:id="@+id/editTextLength1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Enter Length"
         android:inputType="textPersonName"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/editTextLength2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Length"
-        android:inputType="textPersonName"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/editTextLength1"
-        android:layout_alignStart="@+id/editTextLength1" />
+        android:layout_alignStart="@+id/editTextLength1"
+        android:ems="10"
+        android:hint="Enter Length"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/textViewArea"
