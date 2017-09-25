@@ -10,3 +10,5 @@ AreaCalculation: Calculate area of different shapes when a user keys in the inpu
 AreaCalculationWithRadioButton: Calculate area of different shapes when a user keys in the input, selects a radio button and clicks on the Calculate button.
 
 InClass04_02: A simple app to generate passwords with thread pool and asynctask.
+
+InClassPhotoRetrieval: The app downloads images from a link and displays it in the main activity.
