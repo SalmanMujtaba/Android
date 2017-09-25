@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         progressDialog.setProgress(0);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
-
         progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
