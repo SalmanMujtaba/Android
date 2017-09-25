@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
     int length;
     int arrayListLength;
     int index;
-    ListIterator<String> lst;
 
 
     android.support.v7.app.AlertDialog.Builder alert;
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
     public void chooseKeyword(View view) {
         links = null;
         arrayLinks=null;
-        lst = null;
 
         CharSequence[] psw = new CharSequence[choices.length];
         for(int i =0;i<psw.length;i++){
@@ -185,8 +183,6 @@ public class MainActivity extends AppCompatActivity implements GetImageAsyncTask
                 }
                 arrayLinks.remove(0);
                 arrayListLength = arrayLinks.size();
-                Log.d("demo", arrayListLength+" lenngth");
-                lst = arrayLinks.listIterator();
                 callGetImageAsyncTask(arrayLinks.get(0));
                 binding.imageButtonN.setEnabled(true);
                 binding.imageButtonP.setEnabled(true);
