@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">InClassNewsApplication</string>
+   i<string-array name="source">
+        <item>CNN</item>
+        <item>ESPN</item>
+        <item>Sky News</item>
+        <item>Buzzfeed</item>
+    </string-array>
+    <string name="title">Title : </string>
+    <string name="Ingredients">Ingredients : </string>
+    <string name="URL">URL : </string>
+</resources>

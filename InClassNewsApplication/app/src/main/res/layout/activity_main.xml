@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.salman.inclassnewsapplication.MainActivity.MainActivity.MainActivity">
+
+        <TextView
+            android:id="@+id/textViewKeyword"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="Select Keyword"
+            android:paddingTop="20dp"
+            android:text="Select News Scource"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewKeyword"
+            android:layout_toEndOf="@+id/textViewKeyword"
+            android:layout_alignParentTop="true" />
+
+        <Button
+            android:id="@+id/buttonNews"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewKeyword"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="26dp"
+            android:onClick="getNews"
+            android:text="Get News" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_alignStart="@+id/buttonNews"
+            android:layout_below="@+id/buttonNews"
+            android:layout_marginTop="22dp"
+            android:layout_toStartOf="@+id/spinner"
+            android:scaleType="fitXY" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewNewsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewNewsAuthor"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/textViewNewsTitle"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/textViewNewsDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/textViewNewsAuthor"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewNewsD"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/textViewNewsDate"
+                    android:textSize="18sp" />
+                <!---->
+                <!--<TextView-->
+                    <!--android:id="@+id/textViewNewsDate"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_below="@id/textViewNewsAuthor"-->
+                    <!--android:textSize="18sp" />-->
+            </RelativeLayout>
+
+        </ScrollView>
+
+        @nul<ImageButton
+            android:id="@+id/imageButtonF"
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:onClick="firstNews"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/first"
+            android:layout_alignTop="@+id/imageButtonP" />
+
+        <ImageButton
+            android:id="@+id/imageButtonP"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/prev"
+            android:onClick="prevNews"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/imageButtonF" />
+
+        <ImageButton
+            android:id="@+id/imageButtonL"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/imageButtonP"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/last"
+            android:onClick="lastNews"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonN"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/imageButtonL"
+            android:layout_toStartOf="@+id/imageButtonL"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/next"
+            android:onClick="nextNews"/>
+
+        <Button
+            android:id="@+id/buttonFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:onClick="finish"
+            android:layout_alignTop="@+id/imageButtonN"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</layout>
