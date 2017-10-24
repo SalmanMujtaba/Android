@@ -1,13 +1,11 @@
 package com.example.salman.inclass07;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -25,13 +23,11 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
     ArrayList<Music> MusicArrayList;
     Context context;
     IMusicAdapter iMusicAdapter;
-    List<Music> favouriteList= new ArrayList<>();
-//    boolean switchState = false;
 
-    public MusicAdapter(ArrayList<Music> MusicArrayList, Context context, IMusicAdapter iMusicAdapter) {
-        this.MusicArrayList = MusicArrayList;
+    public MusicAdapter(ArrayList<Music> musicArrayList, Context context, IMusicAdapter iMusicAdapter) {
+        MusicArrayList = musicArrayList;
         this.context = context;
-        this.iMusicAdapter=iMusicAdapter;
+        this.iMusicAdapter = iMusicAdapter;
     }
 
     @Override
@@ -54,9 +50,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
 
         Picasso.with(context).load(music.getIcon()).into(holder.imageViewIcon);
 
-
-        iMusicAdapter.manageSwitch();
-
         Float price = Float.parseFloat(music.getPrice().substring(1,music.getPrice().length()));
 
         if(price>=0 && price<1.99f){
@@ -69,30 +62,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
             holder.imgViewDollar.setImageResource(R.drawable.price_high);
 
         }
-
-////        holder.status.setText("Ascending");
-//
-//        holder.sw.setChecked(iMusicAdapter.getSwitchedState());
-//
-//        holder.sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//
-//                if(isChecked){
-//                    iMusicAdapter.setSwitchedState(true);
-//                    iMusicAdapter.refreshList("asc");
-//                    //
-//                }
-//                else{
-////                    holder.status.setText("Descending");
-//                    iMusicAdapter.setSwitchedState(false);
-//
-//                    iMusicAdapter.refreshList("desc");
-//                }
-//            }
-//
-//
-//        });
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener(){
             @Override
@@ -115,6 +84,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
         ImageView imageViewIcon;
         TextView textViewName;
         ImageView imgViewDollar;
+        Switch switchMain;
         TextView textViewPrice;
 
 
@@ -125,17 +95,14 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
             textViewPrice = (TextView) itemView.findViewById(R.id.textViewPrice);
             imgViewDollar = (ImageView) itemView.findViewById(R.id.imageViewDollar);
             textViewName = (TextView) itemView.findViewById(R.id.textViewTitle);
+            switchMain = (Switch)itemView.findViewById(R.id.switch1);
         }
     }
 
     interface IMusicAdapter
     {
-        void refreshList(String asc);
         void removeDataFromFirstList(Music music);
         void refreshUpperList();
-        boolean getSwitchedState();
-        void manageSwitch();
-        void  setSwitchedState(boolean set);
 
     }
 }

@@ -21,6 +21,11 @@ public class GetMusicTrakAsyncTask extends AsyncTask<String, Void, ArrayList<Mus
     }
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
     protected ArrayList<Music> doInBackground(String... params) {
         BufferedReader reader = null;
         try {

@@ -45,7 +45,7 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterRecy
         if(price>=0 && price<1.99f){
             holder.priceIcon.setImageResource(R.drawable.price_low);
         }
-        else if(price>=2f && price<5.99f){
+        else if(price>=2f && price<=5.99f){
             holder.priceIcon.setImageResource(R.drawable.price_medium);
         }
         else{
