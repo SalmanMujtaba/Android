@@ -1,3 +1,9 @@
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
+
 package com.example.salman.inclass07;
 
 import android.app.ProgressDialog;
@@ -45,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         if(musicList2.size()>0){
             isBelowListEmpty=false;
         }
-        binding.relativeLayout.setVisibility(View.VISIBLE);
 
         new GetMusicTrakAsyncTask(MainActivity.this).execute(BASE_URL);
         manageSwitch();
@@ -70,21 +75,31 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
 
     @Override
     public void enableView() {
+        //PROGRESS BAR
         binding.relativeLayout.setVisibility(View.GONE);
-        binding.myRecyclerView.setVisibility(View.VISIBLE);
+
+        binding.recyclerViewMusic.setVisibility(View.VISIBLE);
         binding.layoutAbove.setVisibility(View.VISIBLE);
         binding.textViewFiltered.setVisibility(View.VISIBLE);
-        binding.myRecyclerView.setVisibility(View.VISIBLE);
+        if(isBelowListEmpty){
+            binding.textViewEmptyMessage.setVisibility(View.VISIBLE);
+            binding.myRecyclerView.setVisibility(View.GONE);
+            binding.textViewEmptyMessage.setText(R.string.empty);
+        }
+        else{
+            binding.myRecyclerView.setVisibility(View.VISIBLE);
+            binding.textViewEmptyMessage.setVisibility(View.GONE);
+        }
     }
 
     public void refreshList(String order) {
         if(order.equals("ascending")){
-            binding.switch1.setText("Ascending");
+            binding.switch1.setText(R.string.ascending);
             setSwitchedState(true);
             sortDescending();
         }
         else {
-            binding.switch1.setText("Descending");
+            binding.switch1.setText(R.string.descending);
             setSwitchedState(false);
             sortAscending();
         }
@@ -100,10 +115,14 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
 
     @Override
     public void removeDataFromFirstList(Music music) {
-
         musicList1.remove(music);
         dm.save(music);
         musicList2 = fetchdata();
+        if(isBelowListEmpty){
+            isBelowListEmpty=false;
+            binding.myRecyclerView.setVisibility(View.VISIBLE);
+            binding.textViewEmptyMessage.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -123,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
     }
 
     public void manageSwitch() {
-        binding.switch1.setText("Ascending");
+        binding.switch1.setText(R.string.ascending);
         binding.switch1.setChecked(getSwitchedState());
     }
 
@@ -152,23 +171,36 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
 
     void initialLoad(){
         if(isBelowListEmpty){
-            Collections.sort(musicList1, Music.MusicComparatorDesc);
+            if(getSwitchedState()){
+                Collections.sort(musicList1, Music.MusicComparatorDesc);
+            }
+            else{
+                Collections.sort(musicList1, Music.MusicComparatorDesc);
+            }
             setAdapterAndNotify((ArrayList<Music>) musicList1);
         }
         else{
             updateLists();
-            sortDescending();
+
+            if(getSwitchedState()){
+                sortDescending();
+            }
+            else{
+                sortAscending();
+            }
             setAdapterAndNotify((ArrayList<Music>) musicList1);
             setAdapterAndNotifySecondRecyler((ArrayList<Music>) musicList2);
         }
     }
 
-    void hideViews(){
+    public void hideViews(){
         binding.myRecyclerView.setVisibility(View.INVISIBLE);
         binding.layoutAbove.setVisibility(View.INVISIBLE);
         binding.textViewFiltered.setVisibility(View.INVISIBLE);
-        binding.myRecyclerView.setVisibility(View.INVISIBLE);
+        binding.recyclerViewMusic.setVisibility(View.INVISIBLE);
+        binding.relativeLayout.setVisibility(View.VISIBLE);
     }
+
     void setAdapterAndNotifySecondRecyler(ArrayList<Music> musicList){
         filterMusicListAdapter = new FilterAdapter(musicList, MainActivity.this, MainActivity.this);
         binding.myRecyclerView.setAdapter(filterMusicListAdapter);
@@ -183,6 +215,9 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         musicList2 = fetchdata();
         if(musicList2.size()==0){
             isBelowListEmpty=true;
+            binding.textViewEmptyMessage.setVisibility(View.VISIBLE);
+            binding.myRecyclerView.setVisibility(View.GONE);
+            binding.textViewEmptyMessage.setText(R.string.empty);
         }
         musicList1.add(note);
     }
@@ -205,6 +240,15 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         super.onDestroy();
     }
 
+    void belowListEmpty(){
+        if(isBelowListEmpty){
+
+        }
+        else{
+
+        }
+    }
+
     void updateLists(){
         if(musicList2.size()>0){
             isBelowListEmpty = false;
@@ -215,5 +259,9 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
                 }
             }
         }
+    }
+
+    public void fetchFromAPI(View view) {
+        new GetMusicTrakAsyncTask(MainActivity.this).execute(BASE_URL);
     }
 }

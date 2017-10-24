@@ -1,3 +1,9 @@
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
+
 package com.example.salman.inclass07;
 
 import android.content.Context;
@@ -52,15 +58,14 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
 
         Float price = Float.parseFloat(music.getPrice().substring(1,music.getPrice().length()));
 
-        if(price>=0 && price<1.99f){
+        if(price>=0 && price<=1.99f){
             holder.imgViewDollar.setImageResource(R.drawable.price_low);
         }
-        else if(price>=2f && price<5.99f){
+        else if(price>=2f && price<=5.99f){
             holder.imgViewDollar.setImageResource(R.drawable.price_medium);
         }
         else{
             holder.imgViewDollar.setImageResource(R.drawable.price_high);
-
         }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener(){
@@ -86,7 +91,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
         ImageView imgViewDollar;
         Switch switchMain;
         TextView textViewPrice;
-        
+
         public MusicRecyclerViewHolder(View itemView) {
             super(itemView);
 

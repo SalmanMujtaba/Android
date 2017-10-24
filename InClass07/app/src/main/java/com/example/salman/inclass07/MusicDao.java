@@ -1,3 +1,10 @@
+
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
+
 package com.example.salman.inclass07;
 
 import android.content.ContentValues;
@@ -6,10 +13,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by preranasingh on 10/23/17.
- */
 
 public class MusicDao {
 

@@ -1,3 +1,9 @@
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
+
 package com.example.salman.inclass07;
 
 
@@ -42,7 +48,7 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterRecy
 
         Float price = Float.parseFloat(music.getPrice().substring(1,music.getPrice().length()));
 
-        if(price>=0 && price<1.99f){
+        if(price>=0 && price<=1.99f){
             holder.priceIcon.setImageResource(R.drawable.price_low);
         }
         else if(price>=2f && price<=5.99f){
@@ -50,8 +56,8 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterRecy
         }
         else{
             holder.priceIcon.setImageResource(R.drawable.price_high);
-
         }
+
         holder.itemView.findViewById(R.id.trash_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

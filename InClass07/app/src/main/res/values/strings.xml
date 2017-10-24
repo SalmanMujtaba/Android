@@ -5,6 +5,8 @@
     <string name="noFiltered">Threre is no filtered apps to display</string>
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
+    <string name="empty">There is no filtered apps to display.</string>
+
 
 
 </resources>

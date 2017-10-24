@@ -1,3 +1,8 @@
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
 package com.example.salman.inclass07;
 
 import android.os.AsyncTask;
@@ -23,6 +28,7 @@ public class GetMusicTrakAsyncTask extends AsyncTask<String, Void, ArrayList<Mus
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        activity.hideViews();
     }
 
     @Override
@@ -73,5 +79,6 @@ public class GetMusicTrakAsyncTask extends AsyncTask<String, Void, ArrayList<Mus
     static public interface IData{
         void updateData(ArrayList<Music> musicTracks);
         void enableView();
+        void hideViews();
     }
 }

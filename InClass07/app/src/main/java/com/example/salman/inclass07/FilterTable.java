@@ -1,10 +1,12 @@
+//Salman Mujtaba 800969897
+//Prerana Singh
+//Ryan Mcpeck
+//InClass07
+//Group09
+
 package com.example.salman.inclass07;
 
 import android.database.sqlite.SQLiteDatabase;
-
-/**
- * Created by preranasingh on 10/23/17.
- */
 
 public class FilterTable {
 
