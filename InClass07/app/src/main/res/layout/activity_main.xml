@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="53dp"
+                android:layout_height="57dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/refresh_icon" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="200dp"
+                android:elevation="0dp"
+                android:textAlignment="viewStart"
+                android:textOff="@string/descending"
+                android:textOn="@string/ascending"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewMusic"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:scrollbars="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewFiltered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/filter"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/abc"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="@string/filter"-->
+                <!--android:textColor="@android:color/black" />-->
+        <!--</LinearLayout>-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:scrollbars="horizontal" />
+
+    </LinearLayout>
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/activity_main"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--&gt;-->
+
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/relativeRecycler"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentEnd="true"-->
+           <!--&gt;-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recyclerViewMusic"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+                <!--&lt;!&ndash;android:layout_marginTop="60dp"/>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<Switch&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/switch1"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentTop="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentEnd="true" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/textViewStatus"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;android:layout_alignBottom="@+id/switch1"&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;android:layout_toStartOf="@+id/switch1"&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="text" />&ndash;&gt;-->
+        <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
+</layout>
