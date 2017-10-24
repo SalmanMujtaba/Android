@@ -86,8 +86,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicRecycle
         ImageView imgViewDollar;
         Switch switchMain;
         TextView textViewPrice;
-
-
+        
         public MusicRecyclerViewHolder(View itemView) {
             super(itemView);
 

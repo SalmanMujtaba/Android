@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         if(musicList2.size()>0){
             isBelowListEmpty=false;
         }
-        progressBar.setVisibility(View.VISIBLE);
-        binding.textViewLoading.setVisibility(View.VISIBLE);
+        binding.relativeLayout.setVisibility(View.VISIBLE);
 
         new GetMusicTrakAsyncTask(MainActivity.this).execute(BASE_URL);
         manageSwitch();
@@ -71,8 +70,7 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
 
     @Override
     public void enableView() {
-        progressBar.setVisibility(View.GONE);
-        binding.myRecyclerView.setVisibility(View.GONE);
+        binding.relativeLayout.setVisibility(View.GONE);
         binding.myRecyclerView.setVisibility(View.VISIBLE);
         binding.layoutAbove.setVisibility(View.VISIBLE);
         binding.textViewFiltered.setVisibility(View.VISIBLE);
@@ -106,10 +104,6 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         musicList1.remove(music);
         dm.save(music);
         musicList2 = fetchdata();
-//        if(binding.myRecyclerView.getVisibility()==View.GONE){
-//            linearLayout.setVisibility(View.GONE);
-//            binding.myRecyclerView.setVisibility(View.VISIBLE);
-//        }
     }
 
     @Override
@@ -160,8 +154,6 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         if(isBelowListEmpty){
             Collections.sort(musicList1, Music.MusicComparatorDesc);
             setAdapterAndNotify((ArrayList<Music>) musicList1);
-//            hideViews();
-//            linearLayout.setVisibility(View.VISIBLE);
         }
         else{
             updateLists();
@@ -176,37 +168,6 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         binding.layoutAbove.setVisibility(View.INVISIBLE);
         binding.textViewFiltered.setVisibility(View.INVISIBLE);
         binding.myRecyclerView.setVisibility(View.INVISIBLE);
-        binding.textViewLoading.setVisibility(View.INVISIBLE);
-
-//        binding.myRecyclerView.setVisibility(View.GONE);
-
-//        <LinearLayout
-//        android:layout_width="match_parent"
-//        android:layout_height="match_parent">
-//
-//            <TextView
-//        android:id="@+id/abc"
-//        android:layout_width="match_parent"
-//        android:layout_height="wrap_content"
-//        android:layout_gravity="center"
-//        android:text="@string/filter"
-//        android:textColor="@android:color/black" />
-//        </LinearLayout>
-//        linearLayout = new LinearLayout(this);
-//        linearLayout.setVisibility(View.VISIBLE);
-//        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT));
-//        linearLayout.setId(20);
-//        LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//        lparams.gravity= Gravity.CENTER;
-//
-//        TextView tv=new TextView(this);
-//        tv.setLayoutParams(lparams);
-//        tv.setId(0);
-//        tv.setText(R.string.noFiltered);
-//        linearLayout.addView(tv);
-//        setContentView(linearLayout);
     }
     void setAdapterAndNotifySecondRecyler(ArrayList<Music> musicList){
         filterMusicListAdapter = new FilterAdapter(musicList, MainActivity.this, MainActivity.this);
@@ -222,7 +183,6 @@ public class MainActivity extends AppCompatActivity implements GetMusicTrakAsync
         musicList2 = fetchdata();
         if(musicList2.size()==0){
             isBelowListEmpty=true;
-//            hideViews();
         }
         musicList1.add(note);
     }
