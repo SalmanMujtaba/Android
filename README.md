@@ -14,3 +14,5 @@ InClass04_02: A simple app to generate passwords with thread pool and asynctask.
 InClassPhotoRetrieval: The app downloads images from a link and displays it in the main activity.
 
 InClassNewsApplication: The app fetches JSON data from afew news feeds and displays them on the screen.
+
+InClass07: This is a an app to view games and their price in two lists, where you can bookmark the apps of interest. The switch helps to sort both the recycler views.  
