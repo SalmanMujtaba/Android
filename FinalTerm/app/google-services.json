@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "834735370554",
+    "firebase_url": "https://finalterm-540cc.firebaseio.com",
+    "project_id": "finalterm-540cc",
+    "storage_bucket": "finalterm-540cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834735370554:android:f8502ee59d8abb4e",
+        "android_client_info": {
+          "package_name": "com.example.kashishsyeda.finalterm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834735370554-ms9ve5sanqkl1utiepm04ihdg9hsdfc6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kashishsyeda.finalterm",
+            "certificate_hash": "ccefb6ceef935ee5342020f88387a9b330c0dde5"
+          }
+        },
+        {
+          "client_id": "834735370554-hq4g5gpkp1mcjb4mljie3e1s8jk50juu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC341swYPGiyeu1MEp9RO4q5IE2_3098Qw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834735370554-hq4g5gpkp1mcjb4mljie3e1s8jk50juu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834735370554:android:7b41089be2e46bc4",
+        "android_client_info": {
+          "package_name": "com.example.sarveshrawat.finalterm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834735370554-c48efu637pj9347ce5dk32dfvh949ior.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sarveshrawat.finalterm",
+            "certificate_hash": "73ae86f1e137efc52336aee67d31db5aabb91d14"
+          }
+        },
+        {
+          "client_id": "834735370554-hq4g5gpkp1mcjb4mljie3e1s8jk50juu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC341swYPGiyeu1MEp9RO4q5IE2_3098Qw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834735370554-hq4g5gpkp1mcjb4mljie3e1s8jk50juu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

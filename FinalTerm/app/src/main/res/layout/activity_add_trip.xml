@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sarveshrawat.finalterm.AddTripActivity">
+
+
+    <EditText
+        android:id="@+id/editTextTripName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Enter Trip name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextTripName"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="41dp"
+        android:ems="10"
+        android:hint="Search for a city"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/editTextCity"
+        android:layout_marginEnd="53dp"
+        android:layout_marginTop="14dp"
+        android:text="Search"
+        android:onClick="search"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerViewCreate"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buttonSearch" />
+
+    <Button
+        android:id="@+id/buttonAddTrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="AddTrip"
+        android:onClick="addTrip"
+        />
+</RelativeLayout>
