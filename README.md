@@ -18,3 +18,5 @@ InClassNewsApplication: The app fetches JSON data from afew news feeds and displ
 InClass07: This is a an app to view games and their price in two lists, where you can bookmark the apps of interest. The switch helps to sort both the recycler views.  
 
 HomeWork06: This is a course manager app which is based on RecyclerViews (horizontal and vertical). It uses Realm Database to login and register a user. The user can add Instructors and Courses. There is a one to many relationship between instructors and courses. Please go through the Readme.pdf file for further description.
+
+FinalTerm: The app uses Expandable-parent-child Rcycler view, with Google Map integration. API's were used to suggest user places, nearby places and view those places on Google Map.
